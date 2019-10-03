@@ -39,10 +39,7 @@ class ConfigFileAction(argparse.Action):
                     ):
                         setattr(namespace, dest, value)
                     break
-            else:
-                raise SpectaclesException(
-                    f"'{dest}' in {values} is not a valid configuration parameter."
-                )
+
         parser.set_defaults(**config)
 
     def parse_config(self, path) -> dict:
